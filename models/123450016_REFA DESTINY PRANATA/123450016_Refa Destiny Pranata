@@ -1,0 +1,9 @@
+# Model: RNN
+# Nama: Refa Destiny Pranata
+# Komponen: RNN
+
+def main():
+    print("RNN - Individual Model")
+
+if __name__ == "__main__":
+    main()
