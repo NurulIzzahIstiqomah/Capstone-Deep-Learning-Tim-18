@@ -1,0 +1,48 @@
+# Rencana eksperimen tim 18: Status alat (kipas, lampu, pompa) dari citra
+# Label: Otomatis: status relay
+tim: 18
+judul: Status alat (kipas, lampu, pompa) dari citra
+pembimbing: Ade Lailani
+pilar: Citra
+seed: 1018
+ulangan: 6
+durasi_kondisi_detik: 6
+jeda_detik: 1
+rekam:
+  audio:
+    aktif: false
+  kamera:
+    aktif: true
+    interval_detik: 0.5
+    lebar: 1280
+    tinggi: 720
+faktor:
+  cahaya_ruang:
+    jenis: manual
+    taraf:
+      - lampu ruang menyala
+      - lampu ruang mati
+      - jendela/tirai terbuka
+    instruksi: 'Atur ruang: {taraf}'
+  kipas:
+    - 0
+    - 255
+  pompa:
+    - 0
+    - 255
+  lampu:
+    - 0
+    - 255
+catatan: Cahaya ruang jadi faktor ketahanan
+metode:
+  jenis_tugas: Klasifikasi multi-label 3 alat
+  masukan_model: Urutan 4 frame 224×224
+  metrik_utama: F1 per alat, per kondisi cahaya
+  jalur:
+    - CNN
+    - TL
+    - RNN
+    - Transformer
+    - AE
+  pembanding_non_dl: Histogram warna + HOG + Random Forest
+  catatan_metode: RNN = CNN-LSTM atas urutan frame (kipas berputar butuh info waktu)
