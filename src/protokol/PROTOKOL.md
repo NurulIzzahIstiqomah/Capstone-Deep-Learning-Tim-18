@@ -1,21 +1,26 @@
-# Protokol evaluasi tim — <Nama tim>
+# Protokol Evaluasi Tim 18
 
-Diisi Penjaga Data & Evaluasi pada Sprint 0, digabung ke `main` lewat *pull request* yang
-disetujui pembimbing, lalu **dibekukan**. Perubahan setelah itu hanya lewat *pull request*
-baru yang disetujui pembimbing.
+Diisi oleh Penjaga Data & Evaluasi pada Sprint 0.
+Protokol diajukan melalui Pull Request dan disetujui
+pembimbing sebelum dibekukan.
 
 | Butir | Isi |
 |---|---|
-| Kasus (dari kartu Kasus tim) | … |
-| Sumber dataset | … (tautan dari kartu Kasus tim) |
-| Jenis tugas (`TUGAS`) | klasifikasi / regresi |
-| Target / label | … |
-| Ukuran data latih / validasi / uji | … / … / … |
-| Cara split | `split.indeks` seed 2026, porsi validasi 10 % (atau `indeks_urut` untuk deret waktu) |
-| Metrik utama untuk komparasi | macro-F1 (klasifikasi) / RMSE (regresi) |
-| Praproses yang sama untuk semua model | … |
-| Anggaran komputasi per run | ≤ 20 menit CPU laptop (atau yang disetujui pembimbing) |
-| Evaluasi data uji | sekali, oleh Penjaga Data, pada sprint terakhir (`--final`) |
-| `data_hash` saat dibekukan | … (dari `results/baseline/metrics.json`) |
+| Kasus | Status alat (kipas, lampu, pompa) dari citra |
+| Sumber dataset | Menunggu dataset resmi Tim 18 dari Workbench |
+| Jenis tugas (`TUGAS`) | Klasifikasi |
+| Target / label | Kombinasi status kipas, pompa, dan lampu. `muat()` menghasilkan angka kelas 0–7. Setiap `run.py` mengubahnya menjadi 3 label biner |
+| Ukuran data latih / validasi / uji | Menunggu dataset tersedia |
+| Cara split | Data uji dipisahkan berdasarkan blok kondisi cahaya yang tidak digunakan saat pelatihan. Data latih dan validasi menggunakan `src.common.split.indeks` dengan seed 2026 dan porsi validasi 10% |
+| Metrik utama | Akurasi dan macro-F1 |
+| Metrik tambahan | F1-score per alat dan per kondisi cahaya |
+| Praproses | Citra kamera 1280 × 720, membuang 1 detik pertama setiap kondisi, membentuk urutan 4 frame berukuran 224 × 224, dan menghitung parameter normalisasi hanya dari data latih |
+| Anggaran komputasi per run | Maksimal 20 menit CPU laptop atau sesuai persetujuan pembimbing |
+| Evaluasi data uji | Dilakukan satu kali oleh Penjaga Data & Evaluasi pada sprint terakhir menggunakan `--final` |
+| `data_hash` saat dibekukan | Menunggu dataset final |
 
-Disetujui pembimbing pada: … (tautan *pull request*)
+**Persetujuan pembimbing**
+
+Disetujui pada: Menunggu persetujuan pembimbing.
+
+Tautan Pull Request: Menunggu pengajuan PR.
