@@ -1,4 +1,4 @@
-# Model: Transformer encoder atas patch
+# Model: Transformer encoder
 # Nama: Kevin Antoni Junior
 # Komponen: Transformer encoder atas patch
 
